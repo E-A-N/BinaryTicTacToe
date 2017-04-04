@@ -28,11 +28,7 @@ def bitCount(bit):
         count += 1
     return count
 
-def binaryMatrix(data):
-    for i in data:
+def matrixData(dataX, dataY, _charX = "x", _charY = "y"):
+    trix = []
+    for i in range(9):
         print(i,end='')
-
-
-#printTrix(ticTacToe)
-print(bin(ticTacToe))
-print(bitCount(ticTacToe))
