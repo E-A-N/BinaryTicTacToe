@@ -29,6 +29,25 @@ def bitCount(bit):
     return count
 
 def matrixData(dataX, dataY, _charX = "x", _charY = "y"):
-    trix = []
+    trix = [0,0,0,0,0,0,0,0,0]
+    base = 0b000000001
+    print(bin(dataX))
+    #Track X's coordinates on plane
     for i in range(9):
-        print(i,end='')
+        base <<= i
+        print("base is: %d"%(base)) #debugging
+        print("   i is: %d"%(i))
+        if (base & dataX == base):
+            trix[i] = 'x'
+        elif (base & dataY == base):
+            trix[i] = 'y'
+        else:
+             trix[i] = 0
+        base = 1
+    return trix
+    
+_dataX = 0b010100000
+_dataY = 0b001000001
+
+trix = matrixData(_dataX,_dataY)
+#print(trix)
