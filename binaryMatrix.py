@@ -22,7 +22,7 @@ leftDiag      = 0b100010001
 rightDiag     = 0b001010100
 
 def bitCount(bit):
-    count = 0
+    count = 1
     while (bit > 1):
         bit/=2
         count += 1
