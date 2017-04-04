@@ -20,7 +20,7 @@ class binaryMatrixTest(unittest.TestCase):
     def test_matrix_data_one(self):
         dataX = 0b010100000
         dataY = 0b001000001
-        testData = binTrix.matrixData(dataX,dataY,'x','y')
+        testData = binTrix.matrixData(dataX,dataY,'x','o')
         correctList = ['o', ' ', ' ', ' ', ' ', 'x', 'o', 'x', ' ']
         statement = "This table is incorrect."
         self.assertEqual(correctList,testData,statement)
@@ -28,7 +28,7 @@ class binaryMatrixTest(unittest.TestCase):
     def test_matrix_data_size(self):
         dataX = 0b010100000
         dataY = 0b001000001
-        testData = binTrix.matrixData(dataX,dataY,'x','y')
+        testData = binTrix.matrixData(dataX,dataY,'x','o')
         testSize = len(testData)
         correctSize = 9
         statement = "This table is incorrect."
