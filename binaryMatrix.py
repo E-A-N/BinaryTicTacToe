@@ -32,7 +32,7 @@ def matrixData(dataX, dataY, _charX = "x", _charY = "y"):
     trix = [0,0,0,0,0,0,0,0,0]
     base = 0b000000001
     print(bin(dataX))
-    #Track X's coordinates on plane
+    #Track x/y coordinates on plane
     for i in range(9):
         base <<= i
         print("base is: %d"%(base)) #debugging
@@ -42,7 +42,7 @@ def matrixData(dataX, dataY, _charX = "x", _charY = "y"):
         elif (base & dataY == base):
             trix[i] = 'y'
         else:
-             trix[i] = 0
+             trix[i] = ' '
         base = 1
     return trix
     
