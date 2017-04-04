@@ -21,7 +21,7 @@ class binaryMatrixTest(unittest.TestCase):
         dataX = 0b010100000
         dataY = 0b001000001
         testData = binTrix.matrixData(dataX,dataY,'x','y')
-        correctList = [" ","x","o","x"," "," "," "," ","o",]
+        correctList = ['o', ' ', ' ', ' ', ' ', 'x', 'o', 'x', ' ']
         statement = "This table is incorrect."
         self.assertEqual(correctList,testData,statement)
                          
