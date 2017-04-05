@@ -31,7 +31,7 @@ def bitCount(bit):
 def matrixData(dataX, dataO, _charX = "x", _charO = "o"):
     trix = [0,0,0,0,0,0,0,0,0]
     base = 0b000000001
-    
+
     #Track x/y coordinates on plane
     for i in range(9):
         base <<= i
@@ -40,16 +40,23 @@ def matrixData(dataX, dataO, _charX = "x", _charO = "o"):
         elif (base & dataO == base):
             trix[i] = _charO
         else:
-             trix[i] = ' '
+            trix[i] = ' '
         base = 1
     return trix
-    
-def printMatrix(trix):
-  
-  
-  
+
+def displayMatrix(trix):
+    count = 1
+    for i in trix:
+        print("|%s|"%(i), end='')
+        if (count % 3 == 0):
+            print()
+        count += 1
+
+
+
+
 _dataX = 0b010100000
 _dataY = 0b001000001
 
-#trix = matrixData(_dataX,_dataY)
-#print(trix)
+trix = matrixData(_dataX,_dataY)
+displayMatrix(trix)
