@@ -30,6 +30,7 @@ class binaryMatrixTest(unittest.TestCase):
         dataY = 0b000001111
         testData = binTrix.matrixData(dataX,dataY,'x','o')
         correctList = ['x', 'x', 'x', 'x', 'x', 'o', 'o', 'o', 'o']
+        correctList.reverse() #Align list with with bits correctly
         statement = "This table is incorrect."
         self.assertEqual(correctList,testData,statement)
         
@@ -38,6 +39,7 @@ class binaryMatrixTest(unittest.TestCase):
         dataY = 0b000000000
         testData = binTrix.matrixData(dataX,dataY,'x','o')
         correctList = ['x', 'x', 'x', 'x', 'x', 'x', 'x', 'x', 'x']
+        correctList.reverse() #Align list with with bits correctly
         statement = "This table is incorrect."
         self.assertEqual(correctList,testData,statement)
         
