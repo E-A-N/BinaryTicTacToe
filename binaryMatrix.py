@@ -77,18 +77,21 @@ def dataToBinary(data,chars):
     '''
     This function converts a data table representing game data to bits.
     '''
-    result = 0
+    result = 1
     count = 1
-    binValue = 0b0
     data.reverse()
     for x in chars:
         for z in data:
             if x == z:
-                binValue += 1 << count
-                result += data[count]
-                count += 1
-    count = 1
+                print("appended %d"%(count))
+                result <<= count
+            count += 1
+        count = 1
+    return result
 
+d = ['o', ' ', ' ', ' ', ' ', 'x', 'o', 'x', ' ']
+binRes = dataToBinary(d,'x')
+print(bin(binRes))
 
 def checkGameEnd(data):
     '''
@@ -103,13 +106,3 @@ def checkGameEnd(data):
             result = true
             break
     return result
-
-
-
-
-
-_dataX = 0b010100000
-_dataO = 0b001000001
-
-trix = matrixData(_dataX,_dataO)
-displayMatrix(trix)
