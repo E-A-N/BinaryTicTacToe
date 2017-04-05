@@ -48,7 +48,7 @@ def matrixData(dataX, dataO, _charX = "x", _charO = "o"):
     trix = [0,0,0,0,0,0,0,0,0]
     base = 0b000000001
 
-    #Track x/y coordinates on plane
+    #Track x/o coordinates on plane
     for i in range(9):
         base <<= i
         if (base & dataX == base):
@@ -73,8 +73,23 @@ def displayMatrix(trix):
             print()
         count += 1
 
-#def dataToBinary(data):        
-        
+def dataToBinary(data,chars):
+    '''
+    This function converts a data table representing game data to bits.
+    '''
+    result = 0
+    count = 1
+    binValue = 0b0
+    data.reverse()
+    for x in chars:
+        for z in data:
+            if x == z:
+                binValue += 1 << count
+                result += data[count]
+                count += 1
+    count = 1
+
+
 def checkGameEnd(data):
     '''
     This function checks for a tictactoe within the current coordinates
@@ -88,9 +103,9 @@ def checkGameEnd(data):
             result = true
             break
     return result
-            
-    
-    
+
+
+
 
 
 _dataX = 0b010100000
