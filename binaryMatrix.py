@@ -56,7 +56,7 @@ def displayMatrix(trix):
 
 
 _dataX = 0b010100000
-_dataY = 0b001000001
+_dataO = 0b001000001
 
-trix = matrixData(_dataX,_dataY)
+trix = matrixData(_dataX,_dataO)
 displayMatrix(trix)
