@@ -22,6 +22,11 @@ leftDiag      = 0b100010001
 rightDiag     = 0b001010100
 
 def bitCount(bit):
+    '''
+    This function counts the number of bits in a given number
+    :type bit: int
+    :param bit: A binary number
+    '''
     count = 1
     while (bit > 1):
         bit/=2
@@ -29,6 +34,17 @@ def bitCount(bit):
     return count
 
 def matrixData(dataX, dataO, _charX = "x", _charO = "o"):
+    '''
+    This function creates a new tic tac toe table
+    :type dataX: int (binary)
+    :param dataX: A binary number representing the choices made by player x
+    :type dataO: int (binary)
+    :param dataO: A binary number representing the choices made by player o
+    :type _charX: string
+    :param _charX: A character repesenting player x
+    :type _charO: string
+    :param _charO: A character repesenting player o
+    '''
     trix = [0,0,0,0,0,0,0,0,0]
     base = 0b000000001
 
@@ -45,6 +61,11 @@ def matrixData(dataX, dataO, _charX = "x", _charO = "o"):
     return trix
 
 def displayMatrix(trix):
+    '''
+    This function takes prints a tic tac toe grid
+    :type trix: list
+    :param trix: a list that stores the current game decisions
+    '''
     count = 1
     for i in trix:
         print("|%s|"%(i), end='')
