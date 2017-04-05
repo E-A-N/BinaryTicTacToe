@@ -2,7 +2,7 @@ import unittest
 import binaryMatrix as binTrix
 
 class binaryMatrixTest(unittest.TestCase):
-
+    ###bitCount function tests###
     def test_bit_count_of_1_bit(self):
         bits = 1 #1
         binAmount = 0b1
@@ -17,6 +17,7 @@ class binaryMatrixTest(unittest.TestCase):
         statement = "This is the incorrect amound of bits."
         self.assertEqual(bits,count,statement)
 
+    ###matrixData function tests###
     def test_matrix_data_one(self):
         dataX = 0b010100000
         dataO = 0b001000001
@@ -43,7 +44,7 @@ class binaryMatrixTest(unittest.TestCase):
         statement = "This table is incorrect."
         self.assertEqual(correctList,testData,statement)
 
-    def test_matrix_data_all_Ys(self):
+    def test_matrix_data_all_Os(self):
         dataX = 0b000000000
         dataO = 0b111111111
         testData = binTrix.matrixData(dataX,dataO,'x','o')
@@ -59,6 +60,14 @@ class binaryMatrixTest(unittest.TestCase):
         correctSize = 9
         statement = "This table is incorrect."
         self.assertEqual(correctSize,testSize,statement)
+        
+    ###table conversion to binary test###   
+    def test_table_data_to_binary(self):
+        testData = ['o', ' ', ' ', ' ', ' ', 'x', 'o', 'x', ' ']
+        testBits = binTrix.dataToBinary(data,'o') #0b001000001 
+        correctBits = 0b001000001
+        statement = "Bit amount is not correct."
+        self.assertEqual(correctBits,testBits,statement)
         
     def test_win_top_hor_x(self):
         winConditionX = 0b111000000
