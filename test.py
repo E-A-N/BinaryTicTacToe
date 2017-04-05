@@ -59,6 +59,14 @@ class binaryMatrixTest(unittest.TestCase):
         correctSize = 9
         statement = "This table is incorrect."
         self.assertEqual(correctSize,testSize,statement)
+        
+    def test_win_top_hor_x(self):
+        winConditionX = 0b111000000
+        player = "x"
+        testGame = [' ', ' ', ' ', ' ', ' ', ' ', 'x', 'x', 'x']
+        result = binTrix.checkGameEnd(testGame) #should return a boolean
+        statement = "The game should be over"
+        self.assertTrue(result,statement)
 
 if __name__ == "__main__":
     unittest.main()
