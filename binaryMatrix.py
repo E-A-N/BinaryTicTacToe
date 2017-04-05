@@ -73,15 +73,22 @@ def displayMatrix(trix):
             print()
         count += 1
 
+#def dataToBinary(data):        
+        
 def checkGameEnd(data):
     '''
     This function checks for a tictactoe within the current coordinates
     :type data: list
     :param data: an array of characters representing current game decisions
     '''
+    result = false
     possibilities = [0b111000000, 0b000111000, 0b000000111, 0b100100100, 0b010010010, 0b001001001, 0b100010001, 0b001010100]
     for z in possibilites:
-        
+        if (z & data == z):
+            result = true
+            break
+    return result
+            
     
     
 
