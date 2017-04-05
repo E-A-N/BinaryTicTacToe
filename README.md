@@ -1,2 +1,2 @@
-# BinaryTicTacToe
-A Python tic tac toe game created using bit manipulations
+# Binary Tic Tac Toe
+Written in python primarily using bit manipulations
