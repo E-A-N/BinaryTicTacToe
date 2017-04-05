@@ -44,6 +44,10 @@ def matrixData(dataX, dataO, _charX = "x", _charO = "o"):
         base = 1
     return trix
     
+def printMatrix(trix):
+  
+  
+  
 _dataX = 0b010100000
 _dataY = 0b001000001
 
