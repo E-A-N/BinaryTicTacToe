@@ -76,22 +76,22 @@ def displayMatrix(trix):
 def dataToBinary(data,chars):
     '''
     This function converts a data table representing game data to bits.
+    Note: The value of a bit ascends from right to left.  The index of an array
+    holding the the bit values ascend from left to right.
     '''
-    result = 1
-    count = 1
-    data.reverse()
+    result = 0
+    count = 0
+    data
     for x in chars:
         for z in data:
             if x == z:
-                print("appended %d"%(count))
-                result <<= count
+                #shift bits by index value of count and add to result
+                result += 1 << count
+                print(1 << count)
+                print(result)
             count += 1
-        count = 1
+        count = 0
     return result
-
-d = ['o', ' ', ' ', ' ', ' ', 'x', 'o', 'x', ' ']
-binRes = dataToBinary(d,'x')
-print(bin(binRes))
 
 def checkGameEnd(data):
     '''

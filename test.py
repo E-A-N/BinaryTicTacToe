@@ -60,15 +60,15 @@ class binaryMatrixTest(unittest.TestCase):
         correctSize = 9
         statement = "This table is incorrect."
         self.assertEqual(correctSize,testSize,statement)
-        
-    ###table conversion to binary test###   
+
+    ###table conversion to binary test###
     def test_table_data_to_binary(self):
         testData = ['o', ' ', ' ', ' ', ' ', 'x', 'o', 'x', ' ']
-        testBits = binTrix.dataToBinary(data,'o') #0b001000001 
+        testBits = binTrix.dataToBinary(testData,'o') #0b001000001
         correctBits = 0b001000001
         statement = "Bit amount is not correct."
         self.assertEqual(correctBits,testBits,statement)
-        
+
     def test_win_top_hor_x(self):
         winConditionX = 0b111000000
         player = "x"
