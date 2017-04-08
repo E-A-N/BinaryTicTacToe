@@ -69,6 +69,13 @@ class binaryMatrixTest(unittest.TestCase):
         statement = "Bit amount is not correct."
         self.assertEqual(correctBits,testBits,statement)
 
+    def test_table_data_to_binary_all_x(self):
+        testData = ['x', 'x ', ' x', 'x ', 'x ', 'x', 'x', 'x', ' x']
+        testBits = binTrix.dataToBinary(testData,'o') #0b001000001
+        correctBits = 0b111111111
+        statement = "Bit amount is not correct."
+        self.assertEqual(correctBits,testBits,statement)
+
     def test_win_top_hor_x(self):
         winConditionX = 0b111000000
         player = "x"
