@@ -130,6 +130,24 @@ class binaryMatrixTest(unittest.TestCase):
         result = binTrix.checkGameEnd(testGame,callBack,player) #should return a boolean
         statement = "The game should be over"
         self.assertTrue(result,statement)
+        
+    def test_win_left_vert_x(self):
+        winConditionX = 0b100100100
+        player = "x"
+        testGame = ['x', '', '', 'x', '', '', 'x', '', '']
+        callBack = binTrix.dataToBinary
+        result = binTrix.checkGameEnd(testGame,callBack,player) #should return a boolean
+        statement = "The game should be over"
+        self.assertTrue(result,statement)
+        
+    def test_win_left_vert_o(self):
+        winConditionX = 0b100100100
+        player = "o"
+        testGame = ['o', '', '', 'o', '', '', 'o', '', '']
+        callBack = binTrix.dataToBinary
+        result = binTrix.checkGameEnd(testGame,callBack,player) #should return a boolean
+        statement = "The game should be over"
+        self.assertTrue(result,statement)
 
 if __name__ == "__main__":
     unittest.main()
