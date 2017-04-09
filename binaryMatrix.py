@@ -87,8 +87,8 @@ def dataToBinary(data,chars):
             if x == z:
                 #shift bits by index value of count and add to result
                 result += 1 << count
-                print(1 << count)
-                print(result)
+                #print(1 << count)
+                #print(result)
             count += 1
         count = 0
     return result
