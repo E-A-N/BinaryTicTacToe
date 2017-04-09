@@ -93,13 +93,16 @@ def dataToBinary(data,chars):
         count = 0
     return result
 
-def checkGameEnd(data, toBits):
+#testData = ['x', 'x ', ' x', 'x ', 'x ', 'x', 'x', 'x', ' x']
+#print(dataToBinary(testData))
+
+def checkGameEnd(data, toBits, gameChars = "xo"):
     '''
     This function checks for a tictactoe within the current coordinates
     :type data: list
     :param data: an array of characters representing current game decisions
     '''
-    bitData = toBits(data) #parse the game board
+    bitData = toBits(data,gameChars) #parse the game board
     result = False
     possibilities = [0b111000000, 0b000111000, 0b000000111, 0b100100100, 0b010010010, 0b001001001, 0b100010001, 0b001010100]
     for i in possibilities:

@@ -70,8 +70,8 @@ class binaryMatrixTest(unittest.TestCase):
         self.assertEqual(correctBits,testBits,statement)
 
     def test_table_data_to_binary_all_x(self):
-        testData = ['x', 'x ', ' x', 'x ', 'x ', 'x', 'x', 'x', ' x']
-        testBits = binTrix.dataToBinary(testData,'o') #0b001000001
+        testData = ['x', 'x', 'x', 'x', 'x', 'x', 'x', 'x', 'x']
+        testBits = binTrix.dataToBinary(testData,'x') #0b001000001
         correctBits = 0b111111111
         statement = "Bit amount is not correct."
         self.assertEqual(correctBits,testBits,statement)
@@ -80,7 +80,8 @@ class binaryMatrixTest(unittest.TestCase):
         winConditionX = 0b111000000
         player = "x"
         testGame = [' ', ' ', ' ', ' ', ' ', ' ', 'x', 'x', 'x']
-        result = binTrix.checkGameEnd(testGame) #should return a boolean
+        callBack = binTrix.dataToBinary
+        result = binTrix.checkGameEnd(testGame,callBack,player) #should return a boolean
         statement = "The game should be over"
         self.assertTrue(result,statement)
 
