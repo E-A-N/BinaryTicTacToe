@@ -185,5 +185,42 @@ class binaryMatrixTest(unittest.TestCase):
         statement = "The game should be over"
         self.assertTrue(result,statement)
 
+    def test_win_diagonal_to_right_x(self):
+        winConditionX = 0b001010100
+        player = "x"
+        testGame = ['', '', 'x', '', 'x', '', 'x', '', '']
+        callBack = binTrix.dataToBinary
+        result = binTrix.checkGameEnd(testGame,callBack,player) #should return a boolean
+        statement = "The game should be over"
+        self.assertTrue(result,statement)
+        
+    def test_win_diagonal_to_right_o(self):
+        winConditionX = 0b001010100
+        player = "o"
+        testGame = ['', '', 'o', '', 'o', '', 'o', '', '']
+        callBack = binTrix.dataToBinary
+        result = binTrix.checkGameEnd(testGame,callBack,player) #should return a boolean
+        statement = "The game should be over"
+        self.assertTrue(result,statement)
+        
+    def test_win_diagonal_to_left_x(self):
+        winConditionX = 0b100010001
+        player = "x"
+        testGame = ['x', '', '', '', 'x', '', '', '', 'x']
+        callBack = binTrix.dataToBinary
+        result = binTrix.checkGameEnd(testGame,callBack,player) #should return a boolean
+        statement = "The game should be over"
+        self.assertTrue(result,statement)
+        
+    def test_win_diagonal_to_left_o(self):
+        winConditionX = 0b100010001
+        player = "x"
+        testGame = ['o', '', '', '', 'o', '', '', '', 'o']
+        callBack = binTrix.dataToBinary
+        result = binTrix.checkGameEnd(testGame,callBack,player) #should return a boolean
+        statement = "The game should be over"
+        self.assertTrue(result,statement)
+        
+        
 if __name__ == "__main__":
     unittest.main()
