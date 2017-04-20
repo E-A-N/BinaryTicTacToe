@@ -60,6 +60,7 @@ def matrixData(dataX, dataO, _charX = "x", _charO = "o"):
         base = 1
     return trix
 
+#void function
 def displayMatrix(trix):
     '''
     This function takes prints a tic tac toe grid
@@ -73,11 +74,16 @@ def displayMatrix(trix):
             print()
         count += 1
 
+#returns int, binary number
 def dataToBinary(data,chars):
     '''
     This function converts a data table representing game data to bits.
     Note: The value of a bit ascends from right to left.  The index of an array
     holding the the bit values ascend from left to right.
+    :type data: int
+    :param data: a number value that represents the game data
+    :type chars: string
+    :param chars: characters to check for within the game board
     '''
     result = 0
     count = 0
