@@ -214,7 +214,7 @@ class binaryMatrixTest(unittest.TestCase):
         
     def test_win_diagonal_to_left_o(self):
         winConditionX = 0b100010001
-        player = "x"
+        player = "o"
         testGame = ['o', '', '', '', 'o', '', '', '', 'o']
         callBack = binTrix.dataToBinary
         result = binTrix.checkGameEnd(testGame,callBack,player) #should return a boolean
