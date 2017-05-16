@@ -1,2 +1,4 @@
 # Binary Tic Tac Toe
-A prototype app in python creating using bit manipulation logic
+A prototype commandline app developed in python created using bit manipulation logic
+
+This is a work in progress!
