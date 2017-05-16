@@ -230,5 +230,9 @@ class binaryMatrixTest(unittest.TestCase):
         statement = "This is a cats game, game should end in a draw!"
         self.assertTrue(result,statement)
 
+    def test_input_decideOnMove_center(self):
+        testInput = "5"
+        binTrix.decideOnMove(testInput)
+
 if __name__ == "__main__":
     unittest.main()

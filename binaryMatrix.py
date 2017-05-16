@@ -99,6 +99,12 @@ def dataToBinary(data,chars):
         count = 0
     return result
 
+def decideOnMove():
+    '''
+    This function returns collects the value of a users input
+    that represents whic spot on the grid they wish to choose.
+    '''
+
 def checkGameEnd(data, toBits, gameChars = "xo"):
     '''
     This function checks for a tictactoe within the current coordinates
