@@ -111,7 +111,7 @@ def checkGameEnd(data, toBits, gameChars = "xo"):
     '''
     bitData = toBits(data,gameChars) #parse the game board
     result = False
-    possibilities = [0b111000000, 0b000111000, 0b000000111, 0b100100100, 0b010010010, 0b001001001, 0b100010001, 0b001010100]
+    possibilities = [0b111000000, 0b000111000, 0b000000111, 0b100100100, 0b010010010, 0b001001001, 0b100010001, 0b001010100, 0b111111111]
     for i in possibilities:
         if (bitData & i == i):
             result = True

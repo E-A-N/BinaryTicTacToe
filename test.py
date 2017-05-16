@@ -221,5 +221,14 @@ class binaryMatrixTest(unittest.TestCase):
         statement = "The game should be over"
         self.assertTrue(result,statement)
 
+    def test_cats_game(self):
+        winConditionX = 0b111111111
+        player = "xo"
+        testGame = ["o","x","o","o","x","o","x","o","x"]
+        callBack = binTrix.dataToBinary
+        result = binTrix.checkGameEnd(testGame,callBack,player)
+        statement = "This is a cats game, game should end in a draw!"
+        self.assertTrue(result,statement)
+
 if __name__ == "__main__":
     unittest.main()
