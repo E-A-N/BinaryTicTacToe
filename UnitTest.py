@@ -1,5 +1,5 @@
 import unittest
-import binaryMatrix as binTrix
+import BinaryMatrix as binTrix
 
 class binaryMatrixTest(unittest.TestCase):
     ###bitCount function tests###
@@ -253,6 +253,15 @@ class binaryMatrixTest(unittest.TestCase):
         result = decision == debug
         statement = "Decision should be -1 not %d"%(decision)
         self.assertTrue(result,statement)
+
+    def test_characterRequest_x(self):
+        testChar = "x"
+        choice = binTrix.characterRequest(testChar)
+        result = choice == testChar
+        statement = "This is not the correct character"
+        self.assertTrue(result,statement)
+
+    
 
 if __name__ == "__main__":
     unittest.main()
