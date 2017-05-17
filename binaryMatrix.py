@@ -123,3 +123,17 @@ def checkGameEnd(data, toBits, gameChars = "xo"):
             result = True
             break
     return result
+
+def setGameOptions(ply1,ply2){
+    opts = {}
+    opts["player1"] = ply1
+    opts["player2"] = ply2
+    opts["player1Win"] = False
+    opts["player2Win"] = False
+
+    return opts
+}
+gameStae = {
+    "x": False,
+
+}

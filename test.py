@@ -230,6 +230,24 @@ class binaryMatrixTest(unittest.TestCase):
         statement = "This is a cats game, game should end in a draw!"
         self.assertTrue(result,statement)
 
+    def test_setGameOptions_Dict_xo(self):
+        x = "x"
+        o = "o"
+        opts = binTrix.setGameOptions(x,o)
+        p1CharTest = opts["player1"] == "x"
+        p2CharTest = opts["player2"] == "o"
+        p1LoseTest = opts["player1Win"] == False
+        p2LoseTest = opts["player2Win"] == False
+        p1Statement = "Player 1 is not the correct character"
+        p2Statement = "Player 2 is not the correct character"
+        p1LoseStatement = "Player 1 has NOT won this test game"
+        p2LoseStatement = "Plyaer 2 has NOT won this test game"
+        self.assertTrue(p1CharTest,p1Statement)
+        self.assertTrue(p2CharTest,p2Statement)
+        self.assertTrue(p1LoseTest,p1LoseStatement)
+        self.assertTrue(p2LoseTest,p2LoseStatement)
+
+
     def test_input_decideOnMove_center(self):
         testInput = "5"
         binTrix.decideOnMove(testInput)
