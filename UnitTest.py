@@ -261,7 +261,20 @@ class binaryMatrixTest(unittest.TestCase):
         statement = "This is not the correct character"
         self.assertTrue(result,statement)
 
-    
+    def test_characterRequest_o(self):
+        testChar = "o"
+        choice = binTrix.characterRequest(testChar)
+        result = choice == testChar
+        statement = "This is not the correct character"
+        self.assertTrue(result,statement)
+
+    def test_characterRequest_9(self):
+        testChar = "9"
+        choice = binTrix.characterRequest(testChar)
+        result = choice == testChar
+        statement = "This is not the correct character"
+        self.assertTrue(result,statement)
+
 
 if __name__ == "__main__":
     unittest.main()
