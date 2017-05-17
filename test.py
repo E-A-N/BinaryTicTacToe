@@ -247,12 +247,11 @@ class binaryMatrixTest(unittest.TestCase):
         self.assertTrue(p1LoseTest,p1LoseStatement)
         self.assertTrue(p2LoseTest,p2LoseStatement)
 
-
     def test_input_decideOnMove_center(self):
         debug = 1
         decision = binTrix.decideOnMove(debug)
-        result = decision == -1
-        statement = "Decision should be equal to -1"
+        result = decision == debug
+        statement = "Decision should be -1 not %d"%(decision)
         self.assertTrue(result,statement)
 
 if __name__ == "__main__":

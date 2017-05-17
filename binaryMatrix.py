@@ -105,14 +105,18 @@ def decideOnMove(debug = -1):
     '''
     This function returns the value of a users input
     that represents whic spot on the grid they wish to choose.
+    :type debug: int
+    :param debug: A default value that checks if this function will take input
     '''
     decision = 0
 
     #if anything but -1 is passed to function then game is being simulated
-    if (debug != -1):
-        decision = debug
-    else:
+    if (debug == -1):
         decision = int(input("Enter Binary value for where you wish to move: "))
+    else:
+        #simulation value that will eventually be added to tictactoe grid
+        decision = debug
+
     return decision
 
 
