@@ -1,4 +1,6 @@
 ticTacToe   = 0
+#pass game characters and attributes using the "setGameOptions" function
+gameState = {}
 
 #Bit equivalent to plane coordinates (tictactoe matrix table)
 topLeft     = 0b100000000
@@ -99,11 +101,21 @@ def dataToBinary(data,chars):
         count = 0
     return result
 
-def decideOnMove():
+def decideOnMove(debug = -1):
     '''
-    This function returns collects the value of a users input
+    This function returns the value of a users input
     that represents whic spot on the grid they wish to choose.
     '''
+    decision = 0
+
+    #if anything but -1 is passed to function then game is being simulated
+    if (debug != -1):
+        decision = debug
+    else:
+        decision = int(input("Enter Binary value for where you wish to move: "))
+    return decision
+
+
 
 def checkGameEnd(data, toBits, gameChars = "xo"):
     '''
@@ -124,7 +136,7 @@ def checkGameEnd(data, toBits, gameChars = "xo"):
             break
     return result
 
-def setGameOptions(ply1,ply2){
+def setGameOptions(ply1,ply2):
     opts = {}
     opts["player1"] = ply1
     opts["player2"] = ply2
@@ -132,8 +144,3 @@ def setGameOptions(ply1,ply2){
     opts["player2Win"] = False
 
     return opts
-}
-gameStae = {
-    "x": False,
-
-}

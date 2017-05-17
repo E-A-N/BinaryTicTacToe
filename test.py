@@ -249,8 +249,11 @@ class binaryMatrixTest(unittest.TestCase):
 
 
     def test_input_decideOnMove_center(self):
-        testInput = "5"
-        binTrix.decideOnMove(testInput)
+        debug = 1
+        decision = binTrix.decideOnMove(debug)
+        result = decision == -1
+        statement = "Decision should be equal to -1"
+        self.assertTrue(result,statement)
 
 if __name__ == "__main__":
     unittest.main()
