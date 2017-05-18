@@ -142,32 +142,35 @@ def characterRequest(debug = -77):
 
     return decision
 
-def decideOnMove(debug = -77):
+def decideOnMove(debug = -66):
     '''
     This function returns the value of a users input
     that represents which spot on the grid they wish to choose.
     :type debug: string
-    :param debug: A default value that checks if this function will take input
+    :param debug: A default value that checks if this function will take user input
     '''
     decision = 0
+    badInput = -77
+    userInput = -66
 
     #if anything but -1 is passed to function then game is being simulated
-    if (debug == -77):
+    if (debug == userInput):
         decision = int(input("Enter Binary value for where you wish to move: "))
     else:
         #simulation value that will eventually be added to tictactoe grid
         decision = debug
 
-    #Sanitize Input
-    for i in decision:
-        if (i != "0"):
-            if (i != "1"):
-                decision = -77
-                break
-
     #Convert string to readable binary and parse
-    if(decision != -77):
+    if(decision != badInput) and (type(decision) == str):
+        #Sanitize Input
+        for i in decision:
+            if (i != "0"):
+                if (i != "1"):
+                    decision = badInput
+                    break
         decision = "0b" + decision
         decision = eval(decision)
+    else:
+        decision = badInput
 
     return decision

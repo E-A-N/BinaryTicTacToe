@@ -246,20 +246,62 @@ class binaryMatrixTest(unittest.TestCase):
         self.assertTrue(p2CharTest,p2Statement)
         self.assertTrue(p1LoseTest,p1LoseStatement)
         self.assertTrue(p2LoseTest,p2LoseStatement)
+    '''
+    **************TEST USER INPUT********************
+    '''
+    def test_input_decideOnMove_badInput1(self):
+        debug = "badInput"
+        correctOutput = -77
+        decision = binTrix.decideOnMove(debug)
+        result = decision == correctOutput
+        statement = "Decision should be -77 not %d"%(decision)
+        self.assertTrue(result,statement)
+
+    def test_input_decideOnMove_badInput2(self):
+        debug = " Hi, I'm Cyborg Ean! :D"
+        correct = -77
+        decision = binTrix.decideOnMove(debug)
+        result = decision == correct
+        statement = "Decision should be -77 not %d"%(decision)
+        self.assertTrue(result,statement)
+
+    def test_input_decideOnMove_badInput3(self):
+        debug = "01001010LOLJUSTKIDDING"
+        correctOutput = -77
+        decision = binTrix.decideOnMove(debug)
+        result = decision == correctOutput
+        statement = "Decision should be -77 not %d"%(decision)
+        self.assertTrue(result,statement)
+
+    def test_input_decideOnMove_badInput4(self):
+        debug = "0 10 1 01 01 01 0"
+        correctOutput = -77
+        decision = binTrix.decideOnMove(debug)
+        result = decision == correctOutput
+        statement = "Decision should be -77 not %d"%(decision)
+        self.assertTrue(result,statement)
+
+    def test_input_decideOnMove_badInput5(self):
+        debug = 77
+        correctOutput = -77
+        decision = binTrix.decideOnMove(debug)
+        result = decision == correctOutput
+        statement = "Decision should be -77 not %d"%(decision)
+        self.assertTrue(result,statement)
 
     def test_input_decideOnMove_top_left(self):
         debug = "0001"
-        correct = 1
+        correctOutput = 1
         decision = binTrix.decideOnMove(debug)
-        result = decision == correct
+        result = decision == correctOutput
         statement = "Decision should be 1 not %d"%(decision)
         self.assertTrue(result,statement)
 
     def test_input_decideOnMove_center(self):
         debug = "0101"
-        correct = 5
+        correctOutput = 5
         decision = binTrix.decideOnMove(debug)
-        result = decision == correct
+        result = decision == correctOutput
         statement = "Decision should be 5 not %d"%(decision)
         self.assertTrue(result,statement)
 
