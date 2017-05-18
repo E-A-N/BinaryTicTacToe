@@ -153,12 +153,12 @@ def decideOnMove(debug = -66):
     badInput = -77
     userInput = -66
 
-    #if anything but -1 is passed to function then game is being simulated
+    #if anything but -66 is passed to function then game is being simulated
     if (debug == userInput):
         decision = int(input("Enter Binary value for where you wish to move: "))
     else:
         #simulation value that will eventually be added to tictactoe grid
-        decision = debug
+        decision = badInput
 
     #Convert string to readable binary and parse
     if(decision != badInput) and (type(decision) == str):
