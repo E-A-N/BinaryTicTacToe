@@ -248,6 +248,8 @@ class binaryMatrixTest(unittest.TestCase):
         self.assertTrue(p2LoseTest,p2LoseStatement)
     '''
     **************TEST USER INPUT********************
+    *************************************************
+    *************************************************
     '''
     def test_input_decideOnMove_badInput1(self):
         debug = "badInput"
@@ -259,9 +261,9 @@ class binaryMatrixTest(unittest.TestCase):
 
     def test_input_decideOnMove_badInput2(self):
         debug = " Hi, I'm Cyborg Ean! :D"
-        correct = -77
+        correctOutput = -77
         decision = binTrix.decideOnMove(debug)
-        result = decision == correct
+        result = decision == correctOutput
         statement = "Decision should be -77 not %d"%(decision)
         self.assertTrue(result,statement)
 
