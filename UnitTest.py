@@ -230,10 +230,15 @@ class binaryMatrixTest(unittest.TestCase):
         statement = "This is a cats game, game should end in a draw!"
         self.assertTrue(result,statement)
 
+    def test_diceRoll(self):
+        result = (binTrix.diceRoll == 0) | (binTrix.diceRoll == 1)
+        statement = "Somehow diceRoll is %s, and not 1 or 0"%(str(binTrix.diceRoll))
+        self.assertTrue(result,statement)
+
     def test_setGameOptions_Dict_xo(self):
         x = "x"
         o = "o"
-        opts = binTrix.setGameOptions(x,o)
+        opts = binTrix.setGameOptions(x,o,binTrix.diceRoll)
         p1CharTest = opts["player1"] == "x"
         p2CharTest = opts["player2"] == "o"
         p1LoseTest = opts["player1Win"] == False

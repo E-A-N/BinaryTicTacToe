@@ -136,7 +136,7 @@ def setGameOptions(ply1,ply2,diceRoll):
     '''
     turn = "player1"
     #create 50/50 change of player 2 going first
-    if (diceRool == 1):
+    if (diceRoll == 1):
         turn = "player2"
 
     opts = {}
