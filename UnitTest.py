@@ -235,22 +235,28 @@ class binaryMatrixTest(unittest.TestCase):
         statement = "Somehow diceRoll is %s, and not 1 or 0"%(str(binTrix.diceRoll))
         self.assertTrue(result,statement)
 
-    def test_setGameOptions_Dict_xo(self):
+    def test_setGameOptions_Dict_xo_xFirst(self):
         x = "x"
         o = "o"
-        opts = binTrix.setGameOptions(x,o,binTrix.diceRoll)
+        xFirst = 0
+        opts = binTrix.setGameOptions(x,o,xFirst)
         p1CharTest = opts["player1"] == "x"
         p2CharTest = opts["player2"] == "o"
         p1LoseTest = opts["player1Win"] == False
         p2LoseTest = opts["player2Win"] == False
+        playerTurnTest = opts["firstTurn"] == "player1"
+        currentFirstTest = opts["currentlyFirstTurn"] == True
         p1Statement = "Player 1 is not the correct character"
         p2Statement = "Player 2 is not the correct character"
         p1LoseStatement = "Player 1 has NOT won this test game"
-        p2LoseStatement = "Plyaer 2 has NOT won this test game"
+        p2LoseStatement = "Player 2 has NOT won this test game"
+        playerIsntFirst = "Player1 should be having their turn 1st!"
+
         self.assertTrue(p1CharTest,p1Statement)
         self.assertTrue(p2CharTest,p2Statement)
         self.assertTrue(p1LoseTest,p1LoseStatement)
         self.assertTrue(p2LoseTest,p2LoseStatement)
+        self.assertTrue(playerTurnTest,playerIsntFirst)
     '''
     **************TEST USER INPUT********************
     *************************************************

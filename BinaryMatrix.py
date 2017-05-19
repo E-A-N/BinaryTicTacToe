@@ -134,9 +134,10 @@ def setGameOptions(ply1,ply2,diceRoll):
     :type ply2: string
     :param ply2: A charater that represents 2nd players marks on game board
     '''
+    firstPlayerGoesFirst = (diceRoll == 0)
     turn = "player1"
     #create 50/50 change of player 2 going first
-    if (diceRoll == 1):
+    if (not firstPlayerGoesFirst):
         turn = "player2"
 
     opts = {}
@@ -146,7 +147,7 @@ def setGameOptions(ply1,ply2,diceRoll):
     opts["player2Win"] = False
     opts["firstTurn"] = turn
     #"currentlyFirstturn" key should be boolean to allow seemless alternating between turns
-    opts["currentlyFirstTurn"] = True
+    opts["currentlyFirstTurn"] = firstPlayerGoesFirst
 
 
     return opts
