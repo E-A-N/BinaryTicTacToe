@@ -291,6 +291,22 @@ class binaryMatrixTest(unittest.TestCase):
         statement = "Decision should be -77 not %d"%(decision)
         self.assertTrue(result,statement)
 
+    def test_input_decideOnMove_badInput6(self):
+        debug = True
+        correctOutput = -55
+        decision = binTrix.decideOnMove(debug)
+        result = decision == correctOutput
+        statement = "Decision should be -77 not %d"%(decision)
+        self.assertTrue(result,statement)
+
+    def test_input_decideOnMove_badInput7(self):
+        debug = False
+        correctOutput = -55
+        decision = binTrix.decideOnMove(debug)
+        result = decision == correctOutput
+        statement = "Decision should be -77 not %d"%(decision)
+        self.assertTrue(result,statement)
+
     def test_input_decideOnMove_top_left(self):
         debug = "0001"
         correctOutput = 1
