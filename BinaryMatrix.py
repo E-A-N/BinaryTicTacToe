@@ -121,16 +121,30 @@ def checkGameEnd(data, toBits, gameChars = "xo"):
     return result
 
 def setGameOptions(ply1,ply2):
+    '''
+    This function uses input to create basic game settings.
+    :type ply1: string
+    :param ply1: A character that represents 1st players marks on game board
+    :type ply2: string
+    :param ply2: A charater that represents 2nd players marks on game board
+    '''
     opts = {}
     opts["player1"] = ply1
     opts["player2"] = ply2
     opts["player1Win"] = False
     opts["player2Win"] = False
     return opts
+
 '''
     COLLECT INPUT FROM PLAYERS!!
 '''
 def characterRequest(debug = -77):
+    '''
+    This function returns the value of a users input that represents their gameboard
+    character.
+    :type debug: string
+    :param debug: A default value that checks if this function will take user input
+    '''
     decision = 0
 
     #if anything but -1 is passed to function then game is being simulated
@@ -150,26 +164,27 @@ def decideOnMove(debug = -66):
     :param debug: A default value that checks if this function will take user input
     '''
     decision = 0
-    badInput = -77
-    userInput = -66
+    isDebugging = debug
+    notDebugging = -66
+    badInput = -55
 
     #if anything but -66 is passed to function then game is being simulated
-    if (debug == userInput):
-        decision = int(input("Enter Binary value for where you wish to move: "))
+    if (debug == notDebugging):
+        decision = input("Enter Binary value for where you wish to move: ")
     else:
         #simulation value that will eventually be added to tictactoe grid
-        decision = badInput
+        decision = isDebugging
 
     #Convert string to readable binary and parse
-    if(decision != badInput) and (type(decision) == str):
+    if(type(decision) == str):
         #Sanitize Input
         for i in decision:
-            if (i != "0"):
-                if (i != "1"):
-                    decision = badInput
-                    break
-        decision = "0b" + decision
-        decision = eval(decision)
+            if ((i != "0") and (i != "1")):
+                decision = badInput
+                break
+        if(decision != badInput):
+            decision = "0b" + decision
+            decision = eval(decision)
     else:
         decision = badInput
 

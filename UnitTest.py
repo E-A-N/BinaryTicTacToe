@@ -253,7 +253,7 @@ class binaryMatrixTest(unittest.TestCase):
     '''
     def test_input_decideOnMove_badInput1(self):
         debug = "badInput"
-        correctOutput = -77
+        correctOutput = -55
         decision = binTrix.decideOnMove(debug)
         result = decision == correctOutput
         statement = "Decision should be -77 not %d"%(decision)
@@ -261,7 +261,7 @@ class binaryMatrixTest(unittest.TestCase):
 
     def test_input_decideOnMove_badInput2(self):
         debug = " Hi, I'm Cyborg Ean! :D"
-        correctOutput = -77
+        correctOutput = -55
         decision = binTrix.decideOnMove(debug)
         result = decision == correctOutput
         statement = "Decision should be -77 not %d"%(decision)
@@ -269,7 +269,7 @@ class binaryMatrixTest(unittest.TestCase):
 
     def test_input_decideOnMove_badInput3(self):
         debug = "01001010LOLJUSTKIDDING"
-        correctOutput = -77
+        correctOutput = -55
         decision = binTrix.decideOnMove(debug)
         result = decision == correctOutput
         statement = "Decision should be -77 not %d"%(decision)
@@ -277,7 +277,7 @@ class binaryMatrixTest(unittest.TestCase):
 
     def test_input_decideOnMove_badInput4(self):
         debug = "0 10 1 01 01 01 0"
-        correctOutput = -77
+        correctOutput = -55
         decision = binTrix.decideOnMove(debug)
         result = decision == correctOutput
         statement = "Decision should be -77 not %d"%(decision)
@@ -285,7 +285,7 @@ class binaryMatrixTest(unittest.TestCase):
 
     def test_input_decideOnMove_badInput5(self):
         debug = 77
-        correctOutput = -77
+        correctOutput = -55
         decision = binTrix.decideOnMove(debug)
         result = decision == correctOutput
         statement = "Decision should be -77 not %d"%(decision)
@@ -327,7 +327,6 @@ class binaryMatrixTest(unittest.TestCase):
         result = choice == testChar
         statement = "This is not the correct character"
         self.assertTrue(result,statement)
-
 
 if __name__ == "__main__":
     unittest.main()
