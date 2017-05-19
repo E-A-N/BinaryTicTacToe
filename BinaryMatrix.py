@@ -1,6 +1,12 @@
-ticTacToe   = 0
+import random
+
+#Add bit values representing present game state to this value
+ticTacToe   = 0b0
 #pass game characters and attributes using the "setGameOptions" function
-gameState = {}
+gameSettings = {}
+
+#create 50 50 chance of either player going firstTurn
+diceRoll = random.randint(0,1)
 
 #Bit equivalent to plane coordinates (tictactoe matrix table)
 topLeft     = 0b100000000
@@ -120,7 +126,7 @@ def checkGameEnd(data, toBits, gameChars = "xo"):
             break
     return result
 
-def setGameOptions(ply1,ply2):
+def setGameOptions(ply1,ply2,diceRoll):
     '''
     This function uses input to create basic game settings.
     :type ply1: string
@@ -128,11 +134,21 @@ def setGameOptions(ply1,ply2):
     :type ply2: string
     :param ply2: A charater that represents 2nd players marks on game board
     '''
+    turn = "player1"
+    #create 50/50 change of player 2 going first
+    if (diceRool == 1):
+        turn = "player2"
+
     opts = {}
     opts["player1"] = ply1
     opts["player2"] = ply2
     opts["player1Win"] = False
     opts["player2Win"] = False
+    opts["firstTurn"] = turn
+    #"currentlyFirstturn" key should be boolean to allow seemless alternating between turns
+    opts["currentlyFirstTurn"] = True
+
+
     return opts
 
 '''
