@@ -238,13 +238,30 @@ class binaryMatrixTest(unittest.TestCase):
     def test_setGameOptions_Dict_xo_xFirst(self):
         x = "x"
         o = "o"
-        xFirst = 0
-        opts = binTrix.setGameOptions(x,o,xFirst)
+        isFirst = 0
+        opts = binTrix.setGameOptions(x,o,isFirst)
         p1CharTest = opts["player1"] == "x"
         p2CharTest = opts["player2"] == "o"
         p1LoseTest = opts["player1Win"] == False
         p2LoseTest = opts["player2Win"] == False
         playerTurnTest = opts["firstTurn"] == "player1"
+        currentFirstTest = opts["currentlyFirstTurn"] == True
+        p1Statement = "Player 1 is not the correct character"
+        p2Statement = "Player 2 is not the correct character"
+        p1LoseStatement = "Player 1 has NOT won this test game"
+        p2LoseStatement = "Player 2 has NOT won this test game"
+        playerIsntFirst = "Player1 should be having their turn 1st!"
+
+    def test_setGameOptions_Dict_xo_oFirst(self):
+        x = "x"
+        o = "o"
+        isFirst = 1
+        opts = binTrix.setGameOptions(x,o,isFirst)
+        p1CharTest = opts["player1"] == "x"
+        p2CharTest = opts["player2"] == "o"
+        p1LoseTest = opts["player1Win"] == False
+        p2LoseTest = opts["player2Win"] == False
+        playerTurnTest = opts["firstTurn"] == "player2"
         currentFirstTest = opts["currentlyFirstTurn"] == True
         p1Statement = "Player 1 is not the correct character"
         p2Statement = "Player 2 is not the correct character"
