@@ -206,3 +206,5 @@ def decideOnMove(debug = -66):
         decision = badInput
 
     return decision
+
+    #ADD GAME UPDATE FUNCTION

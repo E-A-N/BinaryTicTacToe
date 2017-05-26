@@ -3,7 +3,7 @@ import BinaryMatrix as game1
 
 class binaryMatrixIntegrationTest(unittest.TestCase):
     ###bitCount function tests###
-    def test_gamePath_1(self):
+    def test_gamePath_p1_win(self):
 
         '''
         For the sake of testing it's assumed
@@ -13,7 +13,7 @@ class binaryMatrixIntegrationTest(unittest.TestCase):
         p1 = "x"
         p2 = "o"
         game1.gameSettings = game1.setGameOptions(p1,p2,game1.diceRoll)
-        game
+        game1.
         statement = "This is the incorrect amound of bits."
         self.assertEqual(bits,count,statement)
 
