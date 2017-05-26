@@ -2,11 +2,7 @@ import random
 
 #Add bit values representing present game state to this value
 ticTacToe   = 0b0
-#pass game characters and attributes using the "setGameOptions" function
-gameSettings = {}
 
-#create 50 50 chance of either player going firstTurn
-diceRoll = random.randint(0,1)
 
 #Bit equivalent to plane coordinates (tictactoe matrix table)
 topLeft     = 0b100000000
@@ -126,6 +122,10 @@ def checkGameEnd(data, toBits, gameChars = "xo"):
             break
     return result
 
+#pass game characters and attributes using the "setGameOptions" function
+gameSettings = {}
+#create 50 50 chance of either player going firstTurn
+diceRoll = random.randint(0,1)
 def setGameOptions(ply1,ply2,diceRoll):
     '''
     This function uses input to create basic game settings.

@@ -1,7 +1,7 @@
 import unittest
 import BinaryMatrix as binTrix
 
-class binaryMatrixTest(unittest.TestCase):
+class binaryMatrixUnitTest(unittest.TestCase):
     ###bitCount function tests###
     def test_bit_count_of_1_bit(self):
         bits = 1 #1
