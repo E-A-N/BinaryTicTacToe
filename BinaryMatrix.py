@@ -208,3 +208,13 @@ def decideOnMove(debug = -66):
     return decision
 
     #ADD GAME UPDATE FUNCTION
+def update(state,*funcs):
+    '''
+    This function advances the state of the game using
+    the current game state and a collection of methods.
+    :type state: dict
+    :param state: A dictionary containing game information
+    '''
+    newState = state
+
+    return newState
