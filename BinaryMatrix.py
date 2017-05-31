@@ -143,24 +143,28 @@ def setGameOptions(ply1,ply2,currentTurn):
 
     opts = {}
     opts["gameBoard"] = 0b0
+    #assign representing characters for each player
     opts["player1"] = ply1
     opts["player2"] = ply2
+    #character representing the current player's turn
+    opts["currentCharacter"] = opts[turn]
+
     #choice formats should be in binary
-    opts["p1Selection"] = "0b0"
-    opts["p2Selection"] = "0b0"
+    opts["p1Selection"] = "0" 
+    opts["p2Selection"] = "0"
+
     #values representing all choices for a given player
     opts["p1Choices"] = 0b0
     opts["p2Choices"] = 0b0
     opts["player1Win"] = False
     opts["player2Win"] = False
-    opts["firstTurn"] = turn
-    #"currentlyFirstturn" key should be boolean to allow seemless alternating between turns
-    opts["currentlyFirstTurn"] = firstPlayerGoesFirst
     return opts
 
 '''
     COLLECT INPUT FROM PLAYERS!!
 '''
+
+#returns string representing a players choice
 def characterRequest(debug = -77):
     '''
     This function returns the value of a users input that represents their gameboard
