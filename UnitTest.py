@@ -7,14 +7,14 @@ class binaryMatrixUnitTest(unittest.TestCase):
         bits = 1 #1
         binAmount = 0b1
         count = binTrix.bitCount(binAmount)
-        statement = "This is the incorrect amound of bits."
+        statement = "This is the incorrect amount of bits."
         self.assertEqual(bits,count,statement)
 
     def test_bit_count_of_8_bits(self):
         bits = 8 #128
         binAmount = 0b10000000
         count = binTrix.bitCount(binAmount)
-        statement = "This is the incorrect amound of bits."
+        statement = "This is the incorrect amount of bits."
         self.assertEqual(bits,count,statement)
 
     ###matrixData function tests###
@@ -35,8 +35,8 @@ class binaryMatrixUnitTest(unittest.TestCase):
         statement = "This table is incorrect."
         self.assertEqual(correctList,testData,statement)
 
-    def test_matrix_data_all_Xs(self):
         dataX = 0b111111111
+    def test_matrix_data_all_Xs(self):
         dataO = 0b000000000
         testData = binTrix.matrixData(dataX,dataO,'x','o')
         correctList = ['x', 'x', 'x', 'x', 'x', 'x', 'x', 'x', 'x']

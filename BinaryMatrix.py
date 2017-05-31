@@ -141,11 +141,13 @@ def setGameOptions(ply1,ply2,diceRoll):
         turn = "player2"
 
     opts = {}
+    opts["gameBoard"] = 0b0
     opts["player1"] = ply1
     opts["player2"] = ply2
     #choice formats should be in binary
     opts["p1Choice"] = "0b0"
     opts["p2Choice"]=  "0b0"
+
                                                                                                 opts["player1Win"] = False
                                                                                                 opts["player2Win"] = False
     opts["firstTurn"] = turn
