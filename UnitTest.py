@@ -35,8 +35,8 @@ class binaryMatrixUnitTest(unittest.TestCase):
         statement = "This table is incorrect."
         self.assertEqual(correctList,testData,statement)
 
-        dataX = 0b111111111
     def test_matrix_data_all_Xs(self):
+        dataX = 0b111111111
         dataO = 0b000000000
         testData = binTrix.matrixData(dataX,dataO,'x','o')
         correctList = ['x', 'x', 'x', 'x', 'x', 'x', 'x', 'x', 'x']
