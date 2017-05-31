@@ -41,9 +41,9 @@ def matrixData(dataX, dataO, _charX = "x", _charO = "o"):
     '''
     This function creates a new tic tac toe table
     :type dataX: int (binary)
-    :param dataX: A binary number representing the choices made by player x
+    :param dataX: A binary number representing all of the choices made by player x
     :type dataO: int (binary)
-    :param dataO: A binary number representing the choices made by player o
+    :param dataO: A binary number representing all of the choices made by player o
     :type _charX: string
     :param _charX: A character repesenting player x
     :type _charO: string
@@ -145,8 +145,11 @@ def setGameOptions(ply1,ply2,diceRoll):
     opts["player1"] = ply1
     opts["player2"] = ply2
     #choice formats should be in binary
-    opts["p1Choice"] = "0b0"
-    opts["p2Choice"]=  "0b0"
+    opts["p1Selection"] = "0b0"
+    opts["p2Selection"] = "0b0"
+    #values representing all choices for a given player
+    opts["p1Choices"] = 0b0
+    opts["p2Choises"] = 0b0
 
                                                                                                 opts["player1Win"] = False
                                                                                                 opts["player2Win"] = False
