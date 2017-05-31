@@ -143,8 +143,11 @@ def setGameOptions(ply1,ply2,diceRoll):
     opts = {}
     opts["player1"] = ply1
     opts["player2"] = ply2
-    opts["player1Win"] = False
-    opts["player2Win"] = False
+    #choice formats should be in binary
+    opts["p1Choice"] = "0b0"
+    opts["p2Choice"]=  "0b0"
+                                                                                                opts["player1Win"] = False
+                                                                                                opts["player2Win"] = False
     opts["firstTurn"] = turn
     #"currentlyFirstturn" key should be boolean to allow seemless alternating between turns
     opts["currentlyFirstTurn"] = firstPlayerGoesFirst
@@ -216,5 +219,6 @@ def update(state,*funcs):
     :param state: A dictionary containing game information
     '''
     newState = state
-
+    p1 = decideOnMove()
+    p2 = decideOnMove()
     return newState
