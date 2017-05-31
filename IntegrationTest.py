@@ -10,10 +10,10 @@ class binaryMatrixIntegrationTest(unittest.TestCase):
         that player 1 goes first by passing 0 into diceRoll
         '''
         game1.diceRoll = 0
-        p1 = "x"
-        p2 = "o"
-        game1.gameSettings = game1.setGameOptions(p1,p2,game1.diceRoll)
-        game1.
+        p1Char = "x"
+        p2Char = "o"
+        game1.gameSettings = game1.setGameOptions(p1Char,p2Char,game1.diceRoll)
+        currentPlayer =
         statement = "This is the incorrect amound of bits."
         self.assertEqual(bits,count,statement)
 

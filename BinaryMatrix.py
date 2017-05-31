@@ -37,7 +37,7 @@ def bitCount(bit):
         count += 1
     return count
 
-def matrixData(dataX, dataO, _charX = "x", _charO = "o"):
+def prepMatrixDisplay(dataX, dataO, _charX = "x", _charO = "o"):
     '''
     This function creates a new tic tac toe table
     :type dataX: int (binary)
@@ -127,7 +127,7 @@ gameSettings = {}
 #create 50 50 chance of either player going firstTurn
 diceRoll = random.randint(0,1)
 #returns dictionary representing game options including game state
-def setGameOptions(ply1,ply2,diceRoll):
+def setGameOptions(ply1,ply2,currentTurn):
     '''
     This function uses input to create basic game settings.
     :type ply1: string
@@ -135,7 +135,7 @@ def setGameOptions(ply1,ply2,diceRoll):
     :type ply2: string
     :param ply2: A charater that represents 2nd players marks on game board
     '''
-    firstPlayerGoesFirst = (diceRoll == 0)
+    firstPlayerGoesFirst = (currentTurn == 0)
     turn = "player1"
     #create 50/50 change of player 2 going first
     if (not firstPlayerGoesFirst):

@@ -17,11 +17,11 @@ class binaryMatrixUnitTest(unittest.TestCase):
         statement = "This is the incorrect amount of bits."
         self.assertEqual(bits,count,statement)
 
-    ###matrixData function tests###
+    ###prepMatrixDisplay function tests###
     def test_matrix_data_one(self):
         dataX = 0b010100000
         dataO = 0b001000001
-        testData = binTrix.matrixData(dataX,dataO,'x','o')
+        testData = binTrix.prepMatrixDisplay(dataX,dataO,'x','o')
         correctList = ['o', ' ', ' ', ' ', ' ', 'x', 'o', 'x', ' ']
         statement = "This table is incorrect."
         self.assertEqual(correctList,testData,statement)
@@ -29,7 +29,7 @@ class binaryMatrixUnitTest(unittest.TestCase):
     def test_matrix_data_two(self):
         dataX = 0b111110000
         dataO = 0b000001111
-        testData = binTrix.matrixData(dataX,dataO,'x','o')
+        testData = binTrix.prepMatrixDisplay(dataX,dataO,'x','o')
         correctList = ['x', 'x', 'x', 'x', 'x', 'o', 'o', 'o', 'o']
         correctList.reverse() #Align list with with bits correctly
         statement = "This table is incorrect."
@@ -38,7 +38,7 @@ class binaryMatrixUnitTest(unittest.TestCase):
     def test_matrix_data_all_Xs(self):
         dataX = 0b111111111
         dataO = 0b000000000
-        testData = binTrix.matrixData(dataX,dataO,'x','o')
+        testData = binTrix.prepMatrixDisplay(dataX,dataO,'x','o')
         correctList = ['x', 'x', 'x', 'x', 'x', 'x', 'x', 'x', 'x']
         correctList.reverse() #Align list with with bits correctly
         statement = "This table is incorrect."
@@ -47,7 +47,7 @@ class binaryMatrixUnitTest(unittest.TestCase):
     def test_matrix_data_all_Os(self):
         dataX = 0b000000000
         dataO = 0b111111111
-        testData = binTrix.matrixData(dataX,dataO,'x','o')
+        testData = binTrix.prepMatrixDisplay(dataX,dataO,'x','o')
         correctList = ['o', 'o', 'o', 'o', 'o','o','o','o','o']
         statement = "This table is incorrect."
         self.assertEqual(correctList,testData,statement)
@@ -55,7 +55,7 @@ class binaryMatrixUnitTest(unittest.TestCase):
     def test_matrix_data_size(self):
         dataX = 0b010100000
         dataO = 0b001000001
-        testData = binTrix.matrixData(dataX,dataO,'x','o')
+        testData = binTrix.prepMatrixDisplay(dataX,dataO,'x','o')
         testSize = len(testData)
         correctSize = 9
         statement = "This table is incorrect."
