@@ -149,10 +149,9 @@ def setGameOptions(ply1,ply2,diceRoll):
     opts["p2Selection"] = "0b0"
     #values representing all choices for a given player
     opts["p1Choices"] = 0b0
-    opts["p2Choises"] = 0b0
+    opts["p2Choices"] = 0b0                                                                          opts["player1Win"] = False
 
-                                                                                                opts["player1Win"] = False
-                                                                                                opts["player2Win"] = False
+                                                                        opts["player2Win"] = False
     opts["firstTurn"] = turn
     #"currentlyFirstturn" key should be boolean to allow seemless alternating between turns
     opts["currentlyFirstTurn"] = firstPlayerGoesFirst
