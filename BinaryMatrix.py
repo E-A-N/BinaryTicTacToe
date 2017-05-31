@@ -126,6 +126,7 @@ def checkGameEnd(data, toBits, gameChars = "xo"):
 gameSettings = {}
 #create 50 50 chance of either player going firstTurn
 diceRoll = random.randint(0,1)
+#returns dictionary representing game options including game state
 def setGameOptions(ply1,ply2,diceRoll):
     '''
     This function uses input to create basic game settings.
@@ -149,14 +150,12 @@ def setGameOptions(ply1,ply2,diceRoll):
     opts["p2Selection"] = "0b0"
     #values representing all choices for a given player
     opts["p1Choices"] = 0b0
-    opts["p2Choices"] = 0b0                                                                          opts["player1Win"] = False
-
-                                                                        opts["player2Win"] = False
+    opts["p2Choices"] = 0b0
+    opts["player1Win"] = False
+    opts["player2Win"] = False
     opts["firstTurn"] = turn
     #"currentlyFirstturn" key should be boolean to allow seemless alternating between turns
     opts["currentlyFirstTurn"] = firstPlayerGoesFirst
-
-
     return opts
 
 '''
