@@ -1,8 +1,7 @@
-                                                                                                            import random
+import random
 
 #Add bit values representing present game state to this value
 ticTacToe   = 0b0
-
 
 #Bit equivalent to plane coordinates (tictactoe matrix table)
 topLeft     = 0b100000000
