@@ -1,4 +1,4 @@
-import random
+                                                                                                            import random
 
 #Add bit values representing present game state to this value
 ticTacToe   = 0b0
@@ -150,7 +150,7 @@ def setGameOptions(ply1,ply2,currentTurn):
     opts["currentCharacter"] = opts[turn]
 
     #choice formats should be in binary
-    opts["p1Selection"] = "0" 
+    opts["p1Selection"] = "0"
     opts["p2Selection"] = "0"
 
     #values representing all choices for a given player
