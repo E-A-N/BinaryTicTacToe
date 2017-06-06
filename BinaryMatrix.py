@@ -134,27 +134,28 @@ gameSettings = {}
 #create 50 50 chance of either player going firstTurn
 diceRoll = random.randint(0,1)
 #returns dictionary representing game options including game state
-def setGameOptions(ternary, data = false, currentTurn = diceRoll):
+def setGameOptions(tern, data = false, currentTurn = diceRoll):
     '''
-    This function uses input to create basic game settings.
     :type ply1: string
+    This function uses input to create basic game settings.
     :param ply1: A character that represents 1st players marks on game board
     :type ply2: string
     :param ply2: A charater that represents 2nd players marks on game board
     '''
-    firstPlayerGoesFirst = (currentTurn == 0)
     turn = "player1"
-    #create 50/50 change of player 2 going first
-    if (not firstPlayerGoesFirst):
-        turn = "player2"
+    if data == false:
+        firstPlayerGoesFirst = (currentTurn == 0)    
+        #create 50/50 change of player 2 going first
+        if (not firstPlayerGoesFirst):
+            turn = "player2"
 
     opts = {}
     opts["gameBoard"] = 0b0
     #assign representing characters for each player
-    opts["player1"] = ternary(data == false,"x",data["player1"])
-    opts["player2"] = ternary(data == false,"o",data["player1"])
+    opts["player1"] = tern(data == false,"x",data["player1"])
+    opts["player2"] = tern(data == false,"o",data["player1"])
     #character representing the current player's turn
-    opts["currentCharacter"] = ternary(data == false,opts[turn],data["player1"])
+    opts["currentCharacter"] = tern(data == false,opts[turn],data["player1"])
 
     #choice formats should be in binary
     opts["p1Selection"] = "0"
