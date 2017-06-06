@@ -13,7 +13,7 @@ class binaryMatrixIntegrationTest(unittest.TestCase):
         p2Char = game1.characterRequest("o")
         game1.gameSettings = game1.setGameOptions(p1Char,p2Char,game1.diceRoll)
         p1Move = decideOnMove("01")
-        currentPlayer =
+        currentPly = game1.gameSettings["currentCharacter"]
         statement = "This is the incorrect amound of bits."
         self.assertEqual(bits,count,statement)
 

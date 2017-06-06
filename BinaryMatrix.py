@@ -24,6 +24,14 @@ rightVertWin  = 0b001001001
 leftDiag      = 0b100010001
 rightDiag     = 0b001010100
 
+#CODING UTILITIES ********************
+def ternary(condition, argA, argB):
+    result = argB
+    if condition:
+        result = argA
+    return result
+
+
 def bitCount(bit):
     '''
     This function counts the number of bits in a given number
@@ -126,7 +134,7 @@ gameSettings = {}
 #create 50 50 chance of either player going firstTurn
 diceRoll = random.randint(0,1)
 #returns dictionary representing game options including game state
-def setGameOptions(ply1,ply2,currentTurn):
+def setGameOptions(ternary, data = false, currentTurn = diceRoll):
     '''
     This function uses input to create basic game settings.
     :type ply1: string
@@ -143,10 +151,10 @@ def setGameOptions(ply1,ply2,currentTurn):
     opts = {}
     opts["gameBoard"] = 0b0
     #assign representing characters for each player
-    opts["player1"] = ply1
-    opts["player2"] = ply2
+    opts["player1"] = ternary(data == false,"x",data["player1"])
+    opts["player2"] = ternary(data == false,"o",data["player1"])
     #character representing the current player's turn
-    opts["currentCharacter"] = opts[turn]
+    opts["currentCharacter"] = ternary(data == false,opts[turn],data["player1"])
 
     #choice formats should be in binary
     opts["p1Selection"] = "0"
